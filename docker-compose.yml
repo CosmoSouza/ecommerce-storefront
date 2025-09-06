@@ -1,0 +1,19 @@
+services:
+  storefrontapp:
+    build:
+      context: .
+    working_dir: /storefront
+    command: ["bash","-lc","bash ./start-dev.sh"]
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    ports:
+      - "8081:8081"
+      - "5005:5005"
+    volumes:
+      - .:/storefront           # no Windows, sem ':z'
+    networks:
+      - ecommerce-net
+
+networks:
+  ecommerce-net:
+    external: true

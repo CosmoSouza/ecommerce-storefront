@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: storefront
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    queue:
+      product-change-availability: product.change.availability.queue
+
+devtools:
+  remote:
+   secret: 123
+restart:
+   trigger-file: trigger.txt
